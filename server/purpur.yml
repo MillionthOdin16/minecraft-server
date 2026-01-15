@@ -1,0 +1,24 @@
+# Purpur Configuration - Bedrock + Performance Optimized
+
+settings:
+  bedrock-support: true
+  use-alternate-knockback: false
+  
+settings.player:
+  teleport-fail-distance: 192
+  count-book-page-requests: true
+  max-book-page-requests-per-second: 1000
+
+settings.entity:
+  ender-dragon-spawning-always: true
+  armor-stands-do-collision-entity-lookups: false
+  mob-spawner-tick-rate: 1
+
+settings.world:
+  disable-teleportation-notice: false
+  fire-tick-slice: 10
+  grass-spread-tick-slice: 4
+  ice-and-snow-tick-slice: 4
+  growing-plant-tick-slice: 4
+  
+verbose: false
