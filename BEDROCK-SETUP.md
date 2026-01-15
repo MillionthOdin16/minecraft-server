@@ -1,44 +1,43 @@
-# Bedrock Compatibility Setup
+# Bedrock Compatibility - Quick Reference
 
-## Connecting to the Server
+## Connection Info
 
-### Java Edition (PC/Mac)
-- Server Address: `mc.bradarr.com` or `<your-ip>:25565`
-- Port: `25565` (default)
+| Edition | Address | Port | Protocol |
+|---------|---------|------|----------|
+| **Java** | `mc.bradarr.com` | `25565` | TCP |
+| **Bedrock** | `mc.bradarr.com` | `19132` | UDP |
 
-### Bedrock Edition (Mobile/Xbox/PS/Nintendo Switch)
-- Server Address: `mc.bradarr.com` or `<your-ip>`
-- Port: `19132` (UDP **required**)
-- Bedrock Edition default port is 19132
-
-## How GeyserMC Works
+## How It Works
 
 1. Bedrock player connects to port 19132 (UDP)
-2. GeyserMC translates Bedrock protocol to Java protocol
-3. Player connects to Java server through Geyser proxy
-4. Both Java and Bedrock players can play together!
+2. GeyserMC translates Bedrock protocol to Java
+3. Both Java and Bedrock players play together!
 
-## Required Ports (Firewall)
+## Required Firewall Ports
+
 - `25565` TCP/UDP - Java Edition
 - `19132` UDP - **Bedrock Edition (critical!)**
 
-## Troubleshooting Bedrock Connection
+## Admin Commands
 
-### "Cannot connect to world" error
-- Verify port 19132 is open (UDP, not just TCP!)
-- Check that GeyserMC is loaded: `/geyserproxy status`
-
-### Bedrock player shows "Invalid IP"
-- Check that `enable-raw-ip-forwarding` is enabled on the server
-- Verify network firewall allows UDP on 19132
-
-### Commands
 - `/geyserproxy status` - Check Geyser status
 - `/geyserproxy reload` - Reload Geyser config
-- `/floodgate register` - Register a Bedrock player link
+- `/floodgate register <player>` - Register Bedrock link
 - `/floodgate unregister <player>` - Unregister link
 
-## DNS/Cloudflare Settings
-If using Cloudflare:
-- UDP port 19132 must bypass Cloudflare (UDP not supported)
-- Use a direct IP or TCP/UDP tunnel for Bedrock
+## Troubleshooting
+
+**"Cannot connect to world":**
+- Verify port 19132 is open (UDP!)
+- Check `/geyserproxy status`
+
+**Bedrock shows "Invalid IP":**
+- Enable `enable-raw-ip-forwarding` on server
+- Firewall must allow UDP 19132
+
+**Cloudflare users:**
+- UDP 19132 must bypass Cloudflare
+
+## Already Configured ✅
+
+GeyserMC and Floodgate are pre-installed in `server/plugins/`

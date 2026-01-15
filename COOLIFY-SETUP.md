@@ -20,7 +20,7 @@ Since the Coolify API is not accessible from this session, please follow these s
    - **Name:** Minecraft Server
    - **Repository:** `https://github.com/MillionthOdin16/minecraft-server`
    - **Branch:** `main`
-   - **Build Pack:** (leave as Auto-detect or try "Java")
+   - **Build Pack:** Java (Minecraft)
    
 3. Click "Continue"
 
@@ -41,9 +41,9 @@ TYPE=PURPUR
 JVM_FLAGS=-Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=15 -XX:InitiatingHeapOccupancyPercent=20
 ```
 
-### Ports
-- Add port: `25565` (TCP) - for Java Edition
-- Add port: `19132` (UDP) - for Bedrock Edition
+### Ports (IMPORTANT - Bedrock Support)
+- Add port: `25565` (TCP/UDP) - for Java Edition
+- Add port: `19132` (UDP) - for Bedrock Edition (critical!)
 
 ## Step 5: Deploy
 
@@ -51,44 +51,63 @@ JVM_FLAGS=-Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseM
 2. Wait for build (first time downloads PurpurMC ~50MB)
 3. Server will start automatically
 
-## Step 6: Install Plugins (After First Startup)
+## Step 6: Connect
 
-After the server starts for the first time, it will create a `plugins` folder. Then:
+**Java Edition (PC/Mac):**
+- Address: `coolify.bradarr.com` or `<your-ip>:25565`
+- Port: `25565`
 
-1. Download plugins:
-   - GeyserMC: https://ci.geysermc.org
-   - Floodgate: https://ci.geysermc.org  
-   - Lithium: https://github.com/CaffeineMC/lithium/releases
-   - Starlight: https://github.com/PaperMC/Starlight/releases
-   - Spark: https://github.com/lucko/spark/releases
+**Bedrock Edition (Mobile/Xbox/PS/Nintendo Switch):**
+- Address: `coolify.bradarr.com` or `<your-ip>`
+- Port: `19132` (UDP - must be open!)
 
-2. Place JAR files in: `/home/opc/clawd/minecraft-server/server/plugins/`
+## Plugins Already Installed ✅
 
-3. Restart server
+These plugins are already in the repo and will be loaded on first startup:
 
-## Step 7: Connect
+| Plugin | Purpose |
+|--------|---------|
+| **GeyserMC** | Bedrock-to-Java protocol translation |
+| **Floodgate** | Bedrock player authentication |
+| **JJTheme** | Custom spawn, economy, worldgen |
+| **Lithium** | Performance optimization |
+| **Starlight** | Faster lighting engine |
+| **Spark** | Performance profiling |
 
-- **Java Edition:** `coolify.bradarr.com:25565`
-- **Bedrock Edition:** `coolify.bradarr.com:19132` (UDP)
-
-## Domain Suggestion
-
-Add a CNAME record:
-- `mc.bradarr.com` → coolify.bradarr.com
-
-## Server Commands
+## Commands
 
 In-game admin:
 - `/geyserproxy status` - Check Bedrock proxy
 - `/spark server` - Profile performance
 - `/stop` - Save and stop server
 
-## Files Already Ready
+## Domain Suggestion
+
+Add a CNAME record:
+- `mc.bradarr.com` → coolify.bradarr.com
+
+## Troubleshooting Bedrock
+
+**"Cannot connect to world" error:**
+- Verify port 19132 is open (UDP, not just TCP!)
+- Check that GeyserMC is loaded: `/geyserproxy status`
+
+**Bedrock player shows "Invalid IP":**
+- Check that `enable-raw-ip-forwarding` is enabled
+- Verify network firewall allows UDP on 19132
+
+**Cloudflare users:**
+- UDP port 19132 must bypass Cloudflare (UDP not supported)
+- Use direct IP or TCP/UDP tunnel for Bedrock
+
+## What's Already Ready
 
 All configuration files are in the GitHub repo:
-- `server.properties` - Optimized settings
-- `purpur.yml` - Purpur config
-- `start.sh` - Startup script
+- `server/plugins/GeyserMC/config.yml` - Bedrock proxy config
+- `server/plugins/Floodgate/config.yml` - Bedrock auth
+- `server/server.properties` - Server settings
+- `server/purpur.yml` - PurpurMC config
+- `server/start.sh` - Startup script
 - `docker-compose.yml` - Docker alternative
 
 Good luck! 🎮
