@@ -1,0 +1,29 @@
+# GeyserMC Configuration for Bedrock Compatibility
+# https://docs.geysermc.org/
+
+bedrock:
+  # Port Bedrock players connect to
+  port: 19132
+  # MotD shown in Bedrock client
+  motd: "Minecraft Server - Java + Bedrock"
+  # Maximum number of players (adds to Java max)
+  max-players: 20
+  # Allow third-party logins (Xbox, etc.)
+  third-party-login: true
+
+remote:
+  # Address of the Java server
+  address: 127.0.0.1
+  # Port of the Java server
+  port: 25565
+  # Authentication type: online (Java has online mode) or offline
+  auth-type: online
+  # Whether to forward player IPs
+  forward-player-ips: true
+
+# Enable/disable metrics
+metrics:
+  enabled: true
+
+# Logging settings
+log-player-connections: true

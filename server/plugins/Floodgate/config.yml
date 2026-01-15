@@ -1,0 +1,19 @@
+# Floodgate Configuration
+# https://docs.geysermc.org/
+
+# Whether to enable Floodgate
+enabled: true
+
+# The public key for encryption (generated on first startup)
+# Leave blank to generate automatically
+public-key: ""
+
+# Login mode:
+# 0 = Allow Bedrock players to join without auth (if server is offline)
+# 1 = Block Bedrock players without Floodgate (recommended for online mode)
+player-link:
+  enabled: true
+  # Command to link accounts: /link <code>
+  
+# Prevent Bedrock players from using Java usernames
+prevent-legacy-connection: true

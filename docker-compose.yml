@@ -6,23 +6,31 @@ services:
     container_name: minecraft-server
     restart: unless-stopped
     ports:
-      - "25565:25565"  # Java Edition
-      - "19132:19132/udp"  # Bedrock Edition (Geyser)
+      - "25565:25565"      # Java Edition TCP
+      - "25565:25565/udp"  # Java Edition UDP  
+      - "19132:19132"      # Bedrock Edition TCP
+      - "19132:19132/udp"  # Bedrock Edition UDP (REQUIRED for Bedrock)
     environment:
       EULA: "TRUE"
-      VERSION: 1.21.3
-      TYPE: PURPUR
+      VERSION: "1.21.3"
+      TYPE: "PURPUR"
       JVM_FLAGS: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=15 -XX:InitiatingHeapOccupancyPercent=20"
-      VIEW_DISTANCE: 8
-      SIMULATION_DISTANCE: 4
-      MAX_PLAYERS: 20
+      VIEW_DISTANCE: "8"
+      SIMULATION_DISTANCE: "4"
+      MAX_PLAYERS: "20"
+      # Bedrock/Geyser Settings
       ENABLE_GEYSER: "true"
-      GEYSER_PORT: 19132
+      GEYSER_PORT: "19132"
     volumes:
       - minecraft-data:/data
-      - ./plugins:/plugins
+      - ./server/plugins:/plugins
     tty: true
     stdin_open: true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:25565" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 volumes:
   minecraft-data:
