@@ -1,0 +1,23 @@
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║     🎀  WELCOME TO JJ'S MINECRAFT SERVER!  🎀            ║
+║                                                           ║
+║           🐱 Cats | 🌸 Flowers | 🍀 Lucky                 ║
+║                                                           ║
+║              🎉 CELEBRATE GOOD TIMES! 🎉                  ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+Commands:
+  /jj - Celebration effect!
+  /lucky - Get lucky drops!
+  /catparty - Spawn cat party!
+  /flowerpower - Flower explosion!
+  /celebration - BIG PARTY!
+  /rainbow - Rainbow armor!
+  /minecat - Minecat spawn eggs!
+  /luckycat - Spawn lucky cat!
+  /glowup - Glow effect!
+  /ghostmode - Become a ghost!
+
+🎮 Have fun, JJ! 🎮

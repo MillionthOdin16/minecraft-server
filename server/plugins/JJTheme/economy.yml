@@ -1,0 +1,36 @@
+# JJ's Server Economy
+currency: '🎀 JJ Tokens'
+symbol: '🎀'
+
+shop:
+  sell:
+    diamond: 100
+    emerald: 50
+    gold_ingot: 25
+    iron_ingot: 10
+    cat_spawn_egg: 200
+    flower_bouquet: 25
+    
+  buy:
+    diamond_block: 900
+    enchanted_golden_apple: 500
+    netherite_scrap: 300
+    shulker_box: 200
+    elytra: 500
+    cat_armor: 1000
+    
+special-items:
+  - name: 'Lucky Cat'
+    price: 500
+    item: cat_spawn_egg
+    lore: 'Brings luck to the holder!'
+    
+  - name: 'Flower Crown'
+    price: 300
+    item: player_head
+    lore: 'Worn by JJ himself!'
+    
+  - name: 'Celebration Firework'
+    price: 50
+    item: firework_rocket{Explosions:{Type:star,Colors:[red,orange,yellow,green,blue,purple],Fade:[pink]}}
+    lore: 'For parties!'

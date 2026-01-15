@@ -1,0 +1,23 @@
+{
+  "name": "JJ",
+  "title": "🎀 Server Owner",
+  "prefix": "§d[🎀JJ§d]§r",
+  "color": "§d",
+  "permissions": ["*"],
+  
+  "rewards": {
+    "join": {
+      "items": ["diamond", "flower_bouquet", "cat_spawn_egg"],
+      "effects": ["speed:120:1"]
+    },
+    "daily": {
+      "items": ["gold_ingot:5", "diamond:1"]
+    }
+  },
+  
+  "homes": {
+    "spawn": [0, 65, 0],
+    "garden": [50, 65, 50],
+    "cat_village": [100, 65, 100]
+  }
+}

@@ -1,0 +1,53 @@
+spawn:
+  location: [0, 65, 0]
+  
+features:
+  # Flower garden at spawn
+  - type: flower_garden
+    x: 0
+    z: 50
+    radius: 30
+    flowers: [all, rare: nether_star_flower]
+    
+  # Lucky cat statues
+  - type: statue
+    x: 20
+    z: 20
+    entity: cat
+    name: '§c§lLUCKY CAT§r'
+    invulnerable: true
+    
+  - type: statue
+    x: -20
+    z: 20
+    entity: cat
+    name: '§d§lLUCKY CAT§r'
+    invulnerable: true
+    
+  # Cat fountain
+  - type: fountain
+    x: 0
+    z: -30
+    water: true
+    cats: 4
+    
+  # Rainbow pathway
+  - type: pathway
+    from: [0, 64, 10]
+    to: [0, 64, 100]
+    blocks: [red_concrete, orange_concrete, yellow_concrete, green_concrete, blue_concrete, purple_concrete, pink_concrete]
+    
+structures:
+  # Lucky village
+  - type: village
+    x: 100
+    z: 100
+    houses: 5
+    cats: 8
+    
+  # Flower forest
+  - type: forest
+    x: -100
+    z: 100
+    trees: oak, cherry
+    flowers: dense

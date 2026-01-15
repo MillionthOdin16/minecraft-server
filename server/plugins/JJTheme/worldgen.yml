@@ -1,0 +1,45 @@
+# Custom world generation for JJ's server
+
+biomes:
+  # More flowers everywhere!
+  flower-forests:
+    flowers:
+      - allium
+      - azure_bluet
+      - blue_orchid
+      - cornflower
+      - dandelion
+      - lily_of_the_valley
+      - orange_tulip
+      - oxeye_daisy
+      - pink_tulip
+      - poppy
+      - red_tulip
+      - white_tulip
+      - wither_rose
+      - torchflower
+      - pitcher_plant
+  
+  # Lucky red structures
+  lucky-villages:
+    enabled: true
+    spawn-chance: 0.3
+    
+  # Cat villages
+  cat-villages:
+    enabled: true
+    spawn-chance: 0.2
+    cats-per-village: 8
+
+ores:
+  # More diamonds for JJ!
+  diamond:
+    veins-per-chunk: 8
+    min-height: -64
+    max-height: 16
+    
+  # Extra gold
+  gold:
+    veins-per-chunk: 12
+    min-height: -32
+    max-height: 32

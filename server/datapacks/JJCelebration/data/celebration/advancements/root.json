@@ -1,0 +1,17 @@
+{
+  "display": {
+    "title": "🎀 JJ's Celebration",
+    "description": "Welcome to JJ's awesome server!",
+    "icon": {
+      "item": "minecraft:totem_of_undying"
+    },
+    "background": "minecraft:textures/block/pink_concrete_powder.png",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# JJ's Celebration Minecraft Server Theme
+# Based on JJ's favorite things!
+
+settings:
+  spawn-protection: 0
+  allow-nether: true
+  allow-end: true
+  
+# Customspawn with cats and flowers
+spawn:
+  x: 0
+  y: 64
+  z: 0
+  protected: false
+  
+# JJ's favorite things spawn naturally
+custom-spawns:
+  - type: cat
+    biome: any
+    count: 10
+  - type: wolf
+    biome: forest
+    count: 5
+  - type: rabbit
+    biome: plains
+    count: 15
+  - type: parrot
+    biome: jungle
+    count: 8
+  - type: axolotl
+    biome: lush_caves
+    count: 6
+  - type: glow_squid
+    biome: underwater
+    count: 8
+
+# Lucky blocks scattered around (requires plugin)
+lucky-blocks:
+  enabled: true
+  spawn-rate: 0.05
+  drops:
+    - diamonds
+    - netherite
+    - enchanted_golden_apple
+    - cat_spawn_egg
+    - flower_bouquet
+    - experience_bottle

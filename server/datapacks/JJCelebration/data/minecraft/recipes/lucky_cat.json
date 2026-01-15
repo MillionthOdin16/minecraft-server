@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GNG",
+    "GGG"
+  ],
+  "key": {
+    "G": {"item": "minecraft:gold_block"},
+    "N": {"item": "minecraft:nether_star"}
+  },
+  "result": {
+    "item": "minecraft:cat_spawn_egg",
+    "components": {
+      "minecraft:custom_name": '{"text":"§c§lLUCKY CAT§r"}'
+    }
+  }
+}
