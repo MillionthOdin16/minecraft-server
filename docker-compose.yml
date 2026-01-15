@@ -6,23 +6,20 @@ services:
     container_name: minecraft-server
     restart: unless-stopped
     ports:
-      - "25565:25565"      # Java Edition TCP
-      - "25565:25565/udp"  # Java Edition UDP
+      - "25565:25565"
     environment:
       EULA: "TRUE"
       VERSION: "1.21.3"
       TYPE: "PURPUR"
-      JVM_FLAGS: "-Xms4G -Xmx4G -XX:+UseG1GC"
+      JVM_FLAGS: "-Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled"
       VIEW_DISTANCE: "8"
       SIMULATION_DISTANCE: "4"
       MAX_PLAYERS: "20"
     volumes:
       - minecraft-data:/data
-      - ./server:/data
+      - ./server:/server
     tty: true
     stdin_open: true
-    cap_add:
-      - NET_ADMIN
 
   # GeyserMC standalone proxy for Bedrock support
   geyser:
@@ -30,7 +27,7 @@ services:
     container_name: geyser-mc
     restart: unless-stopped
     ports:
-      - "19132:19132/udp"  # Bedrock Edition UDP
+      - "19132:19132/udp"
     environment:
       GEYSER_CONFIG: |
         bedrock:
@@ -49,7 +46,3 @@ services:
 
 volumes:
   minecraft-data:
-
-networks:
-  default:
-    name: minecraft-network
