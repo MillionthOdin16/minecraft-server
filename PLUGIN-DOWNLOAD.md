@@ -1,32 +1,34 @@
-# Manual Plugin Download Required
+# Plugin Download - Manual Required
 
-The automatic download script may not work due to API restrictions. Download these plugins manually:
+Automated downloads are blocked by the GeyserMC download server. Manual download required.
 
-## Required for Bedrock Support
+## Download Links
 
-### GeyserMC (Bedrock → Java translation)
+### GeyserMC (Bedrock support)
 1. Go to: https://download.geysermc.org/
-2. Click "Download" for latest version
-3. Download: **GeyserSpigot.jar** (not standalone!)
-4. Place in: `server/plugins/Geyser-Spigot.jar`
+2. Download the latest Spigot JAR
+3. Save as: `server/plugins/Geyser-Spigot.jar`
 
 ### Floodgate (Bedrock authentication)
 1. Go to: https://download.geysermc.org/
-2. Find "Floodgate" and download latest version
-3. Download: **floodgate-spigot.jar**
-4. Place in: `server/plugins/Floodgate-Spigot.jar`
+2. Download the latest Floodgate Spigot JAR
+3. Save as: `server/plugins/Floodgate-Spigot.jar`
 
-## Already Included
-- ✅ WeedPlugin (weed-1.0.3.jar) - Fun plugin
-- ✅ JJTheme (custom spawn/economy/worldgen)
+## After Downloading
 
-## After Download
-1. Verify files are actual JARs:
-   ```bash
-   file server/plugins/*.jar
-   # Should show: "Zip archive data"
-   # NOT: "HTML document" or "ASCII text"
-   ```
-2. Commit and push to GitHub
-3. Redeploy in Coolify
-4. Check logs for: `[PluginInitializerManager] Initialized X plugins`
+```bash
+cd /home/opc/clawd/minecraft-server
+git add server/plugins/*.jar
+git commit -m "Add GeyserMC plugins"
+git push
+```
+
+Then restart the server in Coolify to load the plugins.
+
+## Verify Plugins
+
+After server restarts, check logs for:
+```
+[PluginInitializerManager] Initialized X plugins
+[geyser] GeyserMC connected
+```
